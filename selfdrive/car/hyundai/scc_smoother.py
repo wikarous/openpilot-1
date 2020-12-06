@@ -260,7 +260,7 @@ class SccSmoother:
 #        else:
 #          accel = op_accel * interp(clu11_speed, [50., 60., 100.], [1.75, 1.4, 1.0])
     if accel > 0.:    # 전체 가속로직 선행차가 있을 땐 256라인 가속을 받고 여기서 한번더 가속을 받는다. 선행차가 없을 때는 여기서만 가속을 받는다. 자연스러운 가속은 선행차가 있을 때 가속을 세게해야한다. 
-      accel *= self.accel_gain * interp(clu11_speed, [35., 60., 100.], [1.5, 1.25, 1.2])
+      accel *= self.accel_gain * interp(clu11_speed, [35., 60., 100.], [1.5, 1.25, 1.215])
     else:
       accel *= self.decel_gain * interp(clu11_speed, [70., 75.], [1.79287, 1.8])    #전체 감속로직 보간70킬로까지 감속을 너무 세게 하면 자연스러운 거리 유지가 힘듬.
 
